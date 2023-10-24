@@ -1,0 +1,166 @@
+{
+  "data": [
+    
+      {
+        "image": "https://example.com/product1.jpg",
+        "name": "Stylish Red Dress",
+        "price": 79.99,
+        "category": "Women's Dresses",
+        "color": "Red",
+        "for": "Women"
+      },
+      {
+        "image": "https://example.com/product2.jpg",
+        "name": "Classic Blue Shirt",
+        "price": 39.99,
+        "category": "Men's Shirts",
+        "color": "Blue",
+        "for": "Men"
+      },
+      {
+        "image": "https://example.com/product3.jpg",
+        "name": "Elegant Black Suit",
+        "price": 129.99,
+        "category": "Men's Suits",
+        "color": "Black",
+        "for": "Men"
+      },
+      {
+        "image": "https://example.com/product4.jpg",
+        "name": "Casual Green T-shirt",
+        "price": 19.99,
+        "category": "Men's T-shirts",
+        "color": "Green",
+        "for": "Men"
+      },
+      {
+        "image": "https://example.com/product5.jpg",
+        "name": "Chic Yellow Blouse",
+        "price": 49.99,
+        "category": "Women's Blouses",
+        "color": "Yellow",
+        "for": "Women"
+      },
+      {
+        "image": "https://example.com/product6.jpg",
+        "name": "Formal White Shirt",
+        "price": 59.99,
+        "category": "Men's Shirts",
+        "color": "White",
+        "for": "Men"
+      },
+      {
+        "image": "https://example.com/product7.jpg",
+        "name": "Floral Print Dress",
+        "price": 69.99,
+        "category": "Women's Dresses",
+        "color": "Pink",
+        "for": "Women"
+      },
+      {
+        "image": "https://example.com/product8.jpg",
+        "name": "Denim Jeans",
+        "price": 49.99,
+        "category": "Men's Jeans",
+        "color": "Blue",
+        "for": "Men"
+      },
+      {
+        "image": "https://example.com/product9.jpg",
+        "name": "Striped Polo Shirt",
+        "price": 29.99,
+        "category": "Men's Polo Shirts",
+        "color": "Red",
+        "for": "Men"
+      },
+      {
+        "image": "https://example.com/product10.jpg",
+        "name": "Maxi Floral Dress",
+        "price": 89.99,
+        "category": "Women's Dresses",
+        "color": "Blue",
+        "for": "Women"
+      },
+      {
+        "image": "https://example.com/product11.jpg",
+        "name": "Khaki Pants",
+        "price": 39.99,
+        "category": "Men's Pants",
+        "color": "Khaki",
+        "for": "Men"
+      },
+      {
+        "image": "https://example.com/product12.jpg",
+        "name": "Ruffled Blouse",
+        "price": 59.99,
+        "category": "Women's Blouses",
+        "color": "White",
+        "for": "Women"
+      },
+      {
+        "image": "https://example.com/product13.jpg",
+        "name": "Casual Striped Shirt",
+        "price": 34.99,
+        "category": "Men's Shirts",
+        "color": "Blue",
+        "for": "Men"
+      },
+      {
+        "image": "https://example.com/product14.jpg",
+        "name": "Slim Fit Jeans",
+        "price": 44.99,
+        "category": "Men's Jeans",
+        "color": "Black",
+        "for": "Men"
+      },
+      {
+        "image": "https://example.com/product15.jpg",
+        "name": "A-line Skirt",
+        "price": 39.99,
+        "category": "Women's Skirts",
+        "color": "Brown",
+        "for": "Women"
+      },
+      {
+        "image": "https://example.com/product16.jpg",
+        "name": "V-neck Sweater",
+        "price": 49.99,
+        "category": "Women's Sweaters",
+        "color": "Gray",
+        "for": "Women"
+      },
+      {
+        "image": "https://example.com/product17.jpg",
+        "name": "Plaid Shirt",
+        "price": 37.99,
+        "category": "Men's Shirts",
+        "color": "Red",
+        "for": "Men"
+      },
+      {
+        "image": "https://example.com/product18.jpg",
+        "name": "Cropped Jeans",
+        "price": 34.99,
+        "category": "Women's Jeans",
+        "color": "Blue",
+        "for": "Women"
+      },
+      {
+        "image": "https://example.com/product19.jpg",
+        "name": "Hooded Sweatshirt",
+        "price": 49.99,
+        "category": "Men's Sweatshirts",
+        "color": "Green",
+        "for": "Men"
+      },
+      {
+        "image": "https://example.com/product20.jpg",
+        "name": "Suede Jacket",
+        "price": 89.99,
+        "category": "Women's Jackets",
+        "color": "Brown",
+        "for": "Women"
+      }
+    
+  ] 
+}
