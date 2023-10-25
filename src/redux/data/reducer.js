@@ -1,4 +1,4 @@
-import { GET_CART_FAILURE, GET_CART_REQUIEST, GET_CART_SUCCESS, GET_DATA_FAILURE, GET_DATA_REQUIEST, GET_DATA_SUCCESS, POST_CART_FAILURE, POST_CART_REQUIEST, POST_CART_SUCCESS } from "./action"
+import { DELETE_CART_FAILURE, DELETE_CART_REQUIEST, DELETE_CART_SUCCESS, GET_CART_FAILURE, GET_CART_REQUIEST, GET_CART_SUCCESS, GET_DATA_FAILURE, GET_DATA_REQUIEST, GET_DATA_SUCCESS, POST_CART_FAILURE, POST_CART_REQUIEST, POST_CART_SUCCESS } from "./action"
 
 
 
@@ -8,7 +8,8 @@ const initState={
   isError:false,
   data:[],
   postCart:[],
-  getCart:[]
+  getCart:[],
+  deleteCart:[]
 
 }
 
@@ -55,6 +56,27 @@ export const dataReducer=(state=initState,action)=>{
                         isError:true
                     })
 
+
+
+                    case DELETE_CART_REQUIEST:
+                        return({
+                            ...state,
+                            isLoading:true,
+                            isError:false
+                        })
+                        case DELETE_CART_SUCCESS:
+                            return({
+                                ...state,
+                                isLoading:false,
+                                isError:false,
+                                deleteCart:action.payload
+                            })
+                            case DELETE_CART_FAILURE:
+                                return({
+                                    ...state,
+                                    isLoading:false,
+                                    isError:true
+                                })
 
 
 

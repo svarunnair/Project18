@@ -78,7 +78,7 @@ export const postSignin=(data)=>(dispatch)=>{
         if(res.data.token){
             localStorage.setItem("token",res.data.token)
         }
-        console.log(res.data.token)
+        console.log("res.tokennn",res.data.token)
        
     })
     .catch((error)=>{
