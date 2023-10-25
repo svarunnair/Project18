@@ -40,12 +40,14 @@ import {
 import { getData, postCart } from '../redux/data/action'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 export default function Home() {
 
 
   const mainData=useSelector((store)=>store.data.data)
       const dispatch=useDispatch()
+      const navigate=useNavigate()
   
       console.log("mainData",mainData)
   
@@ -61,10 +63,26 @@ export default function Home() {
       }
 
 
+      const handleCart=()=>{
+        navigate('/cart')
+      }
+
+      const handleLogout=()=>{
+        localStorage.removeItem("token")
+       navigate('/signin')
+      }
+      
+
+
 
 
   return (
 
+
+    <>
+
+    <Button onClick={handleCart}>Cart</Button>
+    <Button onClick={handleLogout}>LogOut</Button>
 
     <>
 
@@ -134,6 +152,8 @@ export default function Home() {
       
       </>
     ))}
+
+</>
     
 
     </>
