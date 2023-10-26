@@ -68,13 +68,15 @@ import {
   chakra,
   Tooltip,
   Button,
+  Text,
+  Link,
 } from '@chakra-ui/react'
 import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs'
 import { FiShoppingCart } from 'react-icons/fi'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { deleteCart, getCart } from '../redux/data/action'
-import { useEffect } from 'react'
+import { deleteAll, deleteCart, getCart, patchCart, postPayment } from '../redux/data/action'
+import { useEffect, useState } from 'react'
 
 const data = {
   isNew: true,
@@ -119,6 +121,7 @@ function Cart() {
   const cartData=useSelector((store)=>store.data.getCart)
     const dispatch=useDispatch()
     const navigate=useNavigate()
+    
   
     console.log("cart",cartData)
   
@@ -132,7 +135,49 @@ function Cart() {
       dispatch(deleteCart(id))
     }
   
+    const handleAdd=(id,quant)=>{
+      let data={
+        quant:quant+1
+      }
+      dispatch(patchCart(id,data))
+    }
+
+    const handleReduce=(id,quant)=>{
+      if(quant<2){
+        quant=2}
+      
+      let data={
+        quant:quant-1
+      }
+      dispatch(patchCart(id,data))
+    }
   
+
+    let total=cartData.reduce((acc,item,index)=>{
+      return acc+item.price*item.quant
+    },0)
+
+
+    const handleHome=()=>{
+      navigate('/home')
+    }
+
+
+
+    const handleBuy=()=>{
+      cartData?.map((item)=>(
+      
+        dispatch(postPayment(item))
+      
+      ))
+
+    }
+
+    useEffect(()=>{
+      cartData?.map((item)=>(
+        dispatch(deleteAll(item.id))
+      ))
+    },[postPayment])
    
 
 
@@ -142,6 +187,8 @@ function Cart() {
   return (
 
     <>
+    Selected products<br/>
+    <Link onClick={handleHome}>Back to Home</Link>
 
     {cartData?.map((item)=>(
               <>
@@ -206,11 +253,19 @@ function Cart() {
     <Button onClick={()=>handleDelete(item.id)}>Delete item</Button>
 
 
-
+    <Button onClick={()=>handleAdd(item.id,item.quant)}>Add</Button>
+            <Button onClick={()=>handleReduce(item.id,item.quant)}>Reduce</Button>
+          <Text>Quantity: {item.quant}</Text>
 
 
               </>
             ))}
+
+<Text>Total amount : {total}</Text>
+
+<Button onClick={handleBuy}>Buy now</Button>
+
+           
       
 
 

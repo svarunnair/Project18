@@ -38,7 +38,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react'
 import { getData, postCart } from '../redux/data/action'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
@@ -48,6 +48,7 @@ export default function Home() {
   const mainData=useSelector((store)=>store.data.data)
       const dispatch=useDispatch()
       const navigate=useNavigate()
+      const [sort,setSort]=useState([])
   
       console.log("mainData",mainData)
   
@@ -73,6 +74,43 @@ export default function Home() {
       }
       
 
+      const handleSortH=()=>{
+        let sortData=mainData?.sort((a,b)=>{
+          return (b.price-a.price)
+        })
+        setSort([...sortData])
+      }
+
+      const handleSortL=()=>{
+        let sortData=mainData?.sort((a,b)=>{
+          return (a.price-b.price)
+        })
+        setSort([...sortData])
+      }
+
+      useEffect(()=>{
+        setSort(mainData)
+      },[mainData])
+
+
+      const handleMale=()=>{
+        let male=mainData.filter((item)=>{
+          return item.for==="Men"
+        })
+        setSort(male)
+      }
+
+      const handleFemail=()=>{
+        let femail=mainData.filter((item)=>{
+          return item.for==="Women"
+        })
+        setSort(femail)
+      }
+
+
+
+
+
 
 
 
@@ -80,13 +118,17 @@ export default function Home() {
 
 
     <>
+    <Button onClick={handleSortH}>Sort H to L</Button>
+    <Button onClick={handleSortL}>Sort H to L</Button>
+    <Button onClick={handleMale}>Male</Button>
+    <Button onClick={handleFemail}>Female</Button>
 
     <Button onClick={handleCart}>Cart</Button>
     <Button onClick={handleLogout}>LogOut</Button>
 
     <>
 
-    {mainData?.map((item)=>(
+    {sort?.map((item)=>(
       <>
 
 <Center py={6}>
