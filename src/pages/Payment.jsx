@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getPayment } from '../redux/data/action'
 
@@ -9,7 +9,7 @@ function Payment() {
 
     console.log("payment",paymentData)
 
-    useSelector(()=>{
+    useEffect(()=>{
         dispatch(getPayment())
     },[])
 
@@ -17,6 +17,11 @@ function Payment() {
 
   return (
     <div>Payment
+      {paymentData.map((item)=>(
+        <>
+        {item.name}
+        </>
+      ))}
 
     </div>
   )
