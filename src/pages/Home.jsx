@@ -36,6 +36,7 @@ import {
   Stack,
   Button,
   useColorModeValue,
+  Link,
 } from '@chakra-ui/react'
 import { getData, postCart } from '../redux/data/action'
 import { useEffect, useState } from 'react'
@@ -107,6 +108,10 @@ export default function Home() {
         setSort(femail)
       }
 
+      const handlePayment=()=>{
+        navigate('/payment')
+      }
+
 
 
 
@@ -125,6 +130,7 @@ export default function Home() {
 
     <Button onClick={handleCart}>Cart</Button>
     <Button onClick={handleLogout}>LogOut</Button>
+    <Link onClick={handlePayment}> To payment</Link>
 
     <>
 
